@@ -21,10 +21,8 @@ const InstagramFeeds = () => {
                 var arr = []
                 for (let i = 0; i < items.length; i++) {
                     var { id, taken_at, code, location, user, comment_count, like_count, caption } = items[i], text = "", loc_name = ""
-                    //   const text = caption.text
                     var { username, full_name } = user
                     var user_url = "https://www.instagram.com/" + username, post_url = "https://www.instagram.com/p/" + code
-                    //   const loc_name = location.name
                     if (caption) {
                         text = caption.text
                     }
@@ -37,12 +35,10 @@ const InstagramFeeds = () => {
                             {text && <Text>{text}</Text>}</Text>
                         <Text>{"\n"}Post link : {post_url}</Text>
                         <LikeComment lc={like_count} cc={comment_count} id={id} />
-                        {/* <Text>{"\u2764\uFE0F"} : {like_count} {"\uD83D\uDCAC"} : {comment_count}</Text> */}
                     </Box>
                     arr.push(ans)
                 }
                 setFeeds(arr)
-                // setFeeds(items)
                 setLoading(false)
             } catch (e) {
                 console.log(e)
@@ -68,7 +64,6 @@ const InstagramFeeds = () => {
         return <Loader message=" Fetching Instagram feeds..." type="dots" />
     }
     else {
-        // console.log(feeds);
         return (
             <>{
                 <Box borderStyle="round" borderColor="#00FFFF" flexDirection="column" width="95%" alignSelf="center" alignItems="center">

@@ -17,7 +17,6 @@ const RedditPost = (props) => {
 				media_data: b64content,
 			})
 			.then((resp) => {
-				// console.log(res.data);
 				const { media_id_string } = resp.data;
 				twit
 					.post("statuses/update", {

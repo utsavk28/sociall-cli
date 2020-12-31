@@ -4,7 +4,6 @@ import { Text, Box } from 'ink';
 import SelectInput from 'ink-select-input';
 import TwitterSearch from "../components/search/TwitterSearch"
 import GithubSearch from "../components/search/GithubSearch"
-// import FacebookFeeds from "../components/feed/FacebookFeeds"
 import InstagramSearch from "../components/search/InstagramSearch"
 import RedditSearch from "../components/search/RedditSearch"
 
@@ -21,9 +20,6 @@ const Search = ({ platform = "",searchField="Test"}) => {
     else if (platform.includes('instagram')) {
         return <InstagramSearch searchField={searchField} />;
     }
-    // else if (platform.includes('facebook')) {
-    //     return <FacebookFeeds />;
-    // }
     else if (platform.includes('reddit')) {
         return <RedditSearch searchField={searchField} />;
     }
@@ -61,16 +57,13 @@ const Search = ({ platform = "",searchField="Test"}) => {
             else if (updateField == 'twitter') {
                 return <TwitterSearch searchField={searchField} />
             }
-            // else if (updateField == 'facebook') {
-            //     return <FacebookFeeds />
-            // }
             else if (updateField == 'reddit') {
                 return <RedditSearch searchField={searchField} />
             }
         }
 
     }
-    // return <Text>Hello, {platform} </Text>;
+    return <Text>Hello, {platform} </Text>;
 };
 
 Search.propTypes = {
@@ -80,8 +73,8 @@ Search.propTypes = {
 };
 
 Search.shortFlags = {
-    platform: 'pf',
-    searchField:'sf'
+    platform: 'p',
+    searchField:'s'
 };
 
 

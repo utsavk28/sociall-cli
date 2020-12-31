@@ -17,20 +17,15 @@ const InstagramPost = (props) => {
     useEffect(() => {
         (async () => {
             try {
-                // const rStream = createReadStream('Land_of_Runes.png')
-                // const items = await ig.upload.photo(rStream);
                 const auth = await ig.account.login(config['instagram']['username'], config['instagram']['password']);
                 const path = props.data.path
                 const publishResult = await ig.publish.photo({
-                    // read the file into a Buffer
                     file: await readFileAsync(path),
-                    // optional, default ''
                     caption: props.data.bio
                 });
 
                 console.log(publishResult);
 
-                // console.log(imageUpload);
                 setLoading(false)
             } catch (e) {
                 console.log(e);
@@ -42,7 +37,6 @@ const InstagramPost = (props) => {
         return <Loader message=" Updating Instagram Profile..." type="dots" />;
     }
     else {
-        // console.log(feeds);
         return <Text color="green">Instagram Profile Updated!!</Text>
 
     }

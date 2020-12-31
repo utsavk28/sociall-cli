@@ -71,7 +71,7 @@ const Feeds = ({ platform = "" }) => {
         }
 
     }
-    // return <Text>Hello, {platform} </Text>;
+    return <Text>Hello, {platform} </Text>;
 };
 
 Feeds.propTypes = {
@@ -80,7 +80,7 @@ Feeds.propTypes = {
 };
 
 Feeds.shortFlags = {
-    platform: 'pf'
+    platform: 'p'
 };
 
 

@@ -58,7 +58,6 @@ const UpdateProfile = ({ platform }) => {
 					<UpdateGithubProfile updateObj={newValue} />
 					<UpdateTwitterProfile updateObj={newValue} />
 					<UpdateInstagramProfile updateObj={newValue} />
-					{/* <UpdateRedditProfile updateObj={newValue} /> */}
 				</>
 			);
 		}
@@ -69,9 +68,6 @@ const UpdateProfile = ({ platform }) => {
 		} else if (platform.includes("instagram")) {
 			return <UpdateInstagramProfile updateObj={newValue} />;
 		}
-		// else if (platform.includes('reddit')) {
-		//   return <UpdateRedditProfile updateObj={newValue} />
-		// }
 		return <Text color="red">Please enter valid platform name!!</Text>;
 	}
 };
@@ -82,7 +78,7 @@ UpdateProfile.propTypes = {
 };
 
 UpdateProfile.shortFlags = {
-	platform: "pf",
+	platform: "p",
 };
 
 export default UpdateProfile;

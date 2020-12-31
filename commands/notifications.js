@@ -18,9 +18,6 @@ const Notifications = ({ platform = "" }) => {
     else if (platform.includes('instagram')) {
         return <InstagramNotifications />;
     }
-    // else if (platform.includes('facebook')) {
-    //     return <FacebookNotificationss />;
-    // }
     else if (platform.includes('reddit')) {
         return <RedditNotifications />;
     }
@@ -64,13 +61,11 @@ const Notifications = ({ platform = "" }) => {
             else if (platform.includes('reddit')) {
                 return <RedditNotifications />;
             }
-            // else if (updateField == 'facebook') {
-            //     return <FacebookNotificationss />
-            // }
+
         }
 
     }
-    // return <Text>Hello, {platform} </Text>;
+    return <Text>Hello, {platform} </Text>;
 };
 
 
@@ -81,7 +76,7 @@ Notifications.propTypes = {
 };
 
 Notifications.shortFlags = {
-    platform: 'pf'
+    platform: 'p'
 };
 
 export default Notifications;
